@@ -3,7 +3,7 @@
 ---
 
 **Description:**
-The script reads multiple CSV files from S3, splits the data by chromosome, and writes each chromosome’s data as Parquet files back to S3.
+The script(make_parquet.py) reads multiple CSV files from S3, splits the data by chromosome, and writes each chromosome’s data as Parquet files back to S3.
 
 ---
 
@@ -11,7 +11,7 @@ The script reads multiple CSV files from S3, splits the data by chromosome, and 
 
 1. **Upload the Script to S3**
 
-   * Save your Python ETL script (shown above) to an S3 bucket.
+   * Upload make_parquet.py Python ETL script to an S3 bucket.
 
 2. **Create IAM Role for Glue Job**
 
