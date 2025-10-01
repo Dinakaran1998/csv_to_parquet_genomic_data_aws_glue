@@ -1,14 +1,9 @@
-````markdown
 # AWS Glue ETL Job: CSV to Parquet by Chromosome
 
 ---
 
 **Description:**
 The script reads multiple CSV files from S3, splits the data by chromosome, and writes each chromosome’s data as Parquet files back to S3.
-
----
-
-Do you want me to place this right **below the script** in the README for clarity?
 
 ---
 
@@ -28,14 +23,14 @@ Do you want me to place this right **below the script** in the README for clarit
 
 3. **Submit Job via AWS CLI**
 
-```bash
+You can submit the job using the following AWS CLI command. Replace the input and output paths as needed:
+
 aws glue start-job-run \
     --job-name csv_to_parquet_genomic_data \
-    --arguments '{
-        "--INPUT_PATH":"s3://aws-batch-input-bioinformatics/csv/*.csv",
-        "--OUTPUT_PATH":"s3://aws-batch-input-bioinformatics/output/"
+    --arguments '{ \
+        "--INPUT_PATH":"s3://aws-batch-input-bioinformatics/csv/*.csv", \
+        "--OUTPUT_PATH":"s3://aws-batch-input-bioinformatics/output/" \
     }'
-````
 
 ---
 
@@ -116,8 +111,3 @@ Glue will spin up a Spark cluster:
 * Dataset: 2 CSVs, 250 MB
 * Auto-scaling won’t help much; 1 fixed worker (STANDARD) is simpler and cheapest.
 * For larger/unpredictable datasets → FLEX with auto-scaling is recommended.
-
----
-
-```
-```
